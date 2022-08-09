@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTex;$(SolutionDir)imgui;$(ProjectDir);$(ProjectDir)2d;$(ProjectDir)3d;$(ProjectDir)base;$(ProjectDir)base\audio;$(ProjectDir)base\camera;$(ProjectDir)base\dxcomon;$(ProjectDir)base\input;$(ProjectDir)base\winapp;%(AdditionalIncludeDirectories);$(ProjectDir)3d\fbx;$(ProjectDir)3d\obj;$(ProjectDir)BehaviorBase</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTex;$(SolutionDir)imgui;$(ProjectDir);$(ProjectDir)2d;$(ProjectDir)3d;$(ProjectDir)base;$(ProjectDir)base\audio;$(ProjectDir)base\camera;$(ProjectDir)base\dxcomon;$(ProjectDir)base\input;$(ProjectDir)base\winapp;%(AdditionalIncludeDirectories);$(ProjectDir)3d\fbx;$(ProjectDir)3d\obj;$(ProjectDir)BehaviorBase;$(ProjectDir)BehaviorBase\testBehavior</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
@@ -140,7 +140,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTex;$(SolutionDir)imgui;%(AdditionalIncludeDirectories);$(ProjectDir);$(ProjectDir)2d;$(ProjectDir)3d;$(ProjectDir)3d\fbx;$(ProjectDir)3d\obj;$(ProjectDir)base;$(ProjectDir)base\audio;$(ProjectDir)base\camera;$(ProjectDir)base\input;$(ProjectDir)base\dxcomon;$(ProjectDir)base\winapp</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTex;$(SolutionDir)imgui;%(AdditionalIncludeDirectories);$(ProjectDir);$(ProjectDir)2d;$(ProjectDir)3d;$(ProjectDir)3d\fbx;$(ProjectDir)3d\obj;$(ProjectDir)base;$(ProjectDir)base\audio;$(ProjectDir)base\camera;$(ProjectDir)base\input;$(ProjectDir)base\dxcomon;$(ProjectDir)base\winapp;$(ProjectDir)BehaviorBase;$(ProjectDir)BehaviorBase\testBehavior;$(ProjectDir)base\Collision</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -152,7 +152,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\aaaaaaaaaaaaaaaa\BehaviorBase\TestPlayer.cpp" />
     <ClCompile Include="2d\DebugText.cpp" />
     <ClCompile Include="2d\PostEffect.cpp" />
     <ClCompile Include="2d\Sprite.cpp" />
@@ -165,10 +164,23 @@
     <ClCompile Include="base\audio\Audio.cpp" />
     <ClCompile Include="base\camera\Camera.cpp" />
     <ClCompile Include="base\camera\DebugCamera.cpp" />
+    <ClCompile Include="base\Collision\Collision.cpp" />
     <ClCompile Include="base\dxcomon\DirectXCommon.cpp" />
     <ClCompile Include="base\input\Input.cpp" />
     <ClCompile Include="base\winapp\WinApp.cpp" />
-    <ClCompile Include="BehaviorBase\CharacterBase.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\AttackJudgment.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\BehaviorData.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\BehaviorTree.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\CharaBase.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\DeffenceAction.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\DeffenceJudgment.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\Enemy.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\MagicAction.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\MagicAttackJudgment.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\NodeBase.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\PhysicsAction.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\SkillAction.cpp" />
+    <ClCompile Include="BehaviorBase\testBehavior\SkillAttackJudgment.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -271,7 +283,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\aaaaaaaaaaaaaaaa\BehaviorBase\TestPlayer.h" />
     <ClInclude Include="2d\PostEffect.h" />
     <ClInclude Include="2d\Sprite.h" />
     <ClInclude Include="2d\SpriteCommon.h" />
@@ -283,10 +294,25 @@
     <ClInclude Include="base\audio\Audio.h" />
     <ClInclude Include="base\camera\Camera.h" />
     <ClInclude Include="base\camera\DebugCamera.h" />
+    <ClInclude Include="base\Collision\Collision.h" />
     <ClInclude Include="base\dxcomon\DirectXCommon.h" />
     <ClInclude Include="base\input\Input.h" />
     <ClInclude Include="base\winapp\WinApp.h" />
-    <ClInclude Include="BehaviorBase\CharacterBase.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\ActionBase.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\AttackJudgment.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\BehaviorData.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\BehaviorTree.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\CharaBase.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\DeffenceAction.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\DeffenceJudgment.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\Enemy.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\ExecJudgmentBase.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\MagicAction.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\MagicAttackJudgment.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\NodeBase.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\PhysicsAction.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\SkillAction.h" />
+    <ClInclude Include="BehaviorBase\testBehavior\SkillAttackJudgment.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="PipelineSet.h" />
   </ItemGroup>

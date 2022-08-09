@@ -1,4 +1,6 @@
 #pragma once
+
+#pragma region include
 #include "Input.h"
 #include "WinApp.h"
 #include "DirectXCommon.h"
@@ -12,6 +14,21 @@
 #include"DebugCamera.h"
 #include"PostEffect.h"
 #include<vector>
+
+#include "BehaviorTree.h"
+#include "AttackJudgment.h"
+#include "MagicAttackJudgment.h"
+#include "SkillAttackJudgment.h"
+#include "DeffenceJudgment.h"
+#include "PhysicsAction.h"
+#include "DeffenceAction.h"
+#include "MagicAction.h"
+#include "SkillAction.h"
+#include "Enemy.h"
+#include "Collision.h"
+
+#pragma endregion include
+
 class GameScene
 {
 private:
@@ -41,12 +58,18 @@ public:
 	void LoadTextureFbx();
 	void LoadTextureObj();
 
+	void SetBehavior();
+	void Behavior();
+
 	void Update();
 	void ClassUpdate();
 
 	void Draw();
 
 private: // ÉÅÉìÉoïœêî
+	BehaviorTree behavior;
+	Enemy* enemyZ;
+
 	ID3D12Device* device;
 	SpriteCommon* spriteCommon_;
 	DirectXCommon* dxCommon_ = nullptr;
@@ -59,6 +82,7 @@ private: // ÉÅÉìÉoïœêî
 
 	Object3d* obj = nullptr;
 	Model* modelChr = nullptr;
+	Model* modelChr2 = nullptr;
 
 };
 
